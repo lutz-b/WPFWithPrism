@@ -1,6 +1,6 @@
 ﻿using Prism.Mvvm;
 
-namespace TrismTestWPF01.ViewModels
+namespace PrismViewModelLocatorDemo.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
@@ -10,15 +10,6 @@ namespace TrismTestWPF01.ViewModels
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
-
-        private string _subTitle = "Prism Application Subtitle";
-
-        public string Subtitle
-        {
-            get { return _subTitle; }
-            set { SetProperty(ref _subTitle, value); }
-        }
-
 
         public MainWindowViewModel()
         {

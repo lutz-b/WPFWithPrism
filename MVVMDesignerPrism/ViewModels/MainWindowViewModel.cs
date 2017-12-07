@@ -1,10 +1,12 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using System.ComponentModel;
 
-namespace TrismTestWPF01.ViewModels
+namespace MVVMDesignerPrism.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Application";
+        private string _title = "Prism Application Title";
         public string Title
         {
             get { return _title; }
@@ -19,10 +21,23 @@ namespace TrismTestWPF01.ViewModels
             set { SetProperty(ref _subTitle, value); }
         }
 
-
         public MainWindowViewModel()
         {
 
         }
+
+        public DelegateCommand ReplaceSubtitleCommand => new DelegateCommand( () =>
+        {
+            this.Subtitle = "Test";
+        }
+        
+            
+        );
+
+        //private void SetSubtitle(string sub)
+        //{
+        //    Subtitle = sub;
+        //}
+
     }
 }

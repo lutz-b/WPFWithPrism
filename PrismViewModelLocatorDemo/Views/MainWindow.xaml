@@ -1,14 +1,13 @@
-﻿<Window x:Class="TrismTestWPF01.Views.Shell"
+﻿<Window x:Class="PrismViewModelLocatorDemo.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525">
-    <StackPanel Orientation="Vertical">
-        <Label Content="{Binding Subtitle}" FontSize="20" Padding="20"></Label>
-            <ItemsControl Name="MainRegion" prism:RegionManager.RegionName="ContentRegion"/>
-    </StackPanel>
-    
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Content="{Binding Title}"/>
 
-    
+        </StackPanel>
+    </Grid>
 </Window>
