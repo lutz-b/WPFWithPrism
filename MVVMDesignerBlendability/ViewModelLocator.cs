@@ -10,6 +10,7 @@ namespace MVVMDesignerBlendability
     public class ViewModelLocator
     {
         public IMainViewModel MainViewModel { get; set; }
+        public IMainViewModel DesignTimeViewModel { get; set; } = new MockMainViewModel();
 
         public ViewModelLocator()
         {
