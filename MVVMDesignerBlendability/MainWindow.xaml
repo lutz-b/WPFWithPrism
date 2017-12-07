@@ -16,9 +16,35 @@
 
     <StackPanel Orientation="Vertical">
         <TextBox Text="{Binding TestString, Mode=TwoWay}"></TextBox>
-        <Label Content="{Binding TestString, Mode=TwoWay}" Width="100" Background="LightBlue"></Label>
-        <TextBox Text="{Binding TestString, Mode=TwoWay}"></TextBox>
+        <Label Content="{Binding TestString}" Width="100" Background="LightBlue"></Label>
+
         
+            <ItemsControl ItemsSource="{Binding StringList}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding .}"></Label>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        <ItemsControl ItemsSource="{Binding ObjectList}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Display}"></Label>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Button Height="20" Content="Add" Command="{Binding AddCommand}" ></Button>
+
         
     </StackPanel>
 </Window>

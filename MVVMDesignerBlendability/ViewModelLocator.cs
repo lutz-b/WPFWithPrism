@@ -3,16 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Practices.Unity;
 
 namespace MVVMDesignerBlendability
 {
     public class ViewModelLocator
     {
-        public MainViewModel MainViewModel { get; set; }
+        public IMainViewModel MainViewModel { get; set; }
 
         public ViewModelLocator()
         {
-            MainViewModel = new MainViewModel();
+            var unityContainer = new UnityContainer();
+
+            var isDesignMode = System.ComponentModel.DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject());
+
+            if (!isDesignMode)
+            {
+                unityContainer.RegisterType<IMainViewModel, MainViewModel>();
+            }
+            else
+            {
+                unityContainer.RegisterType<IMainViewModel, MockMainViewModel>();
+            }
+
+            MainViewModel = unityContainer.Resolve<IMainViewModel>();
         }
     }
 }
