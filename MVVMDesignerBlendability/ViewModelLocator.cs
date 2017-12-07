@@ -10,6 +10,10 @@ namespace MVVMDesignerBlendability
     public class ViewModelLocator
     {
         public IMainViewModel MainViewModel { get; set; }
+
+        // you can set up a different design time viewmodel and define it in the xaml file 
+        // d:DataContext="{Binding DesignTimeViewModel, Source={StaticResource Locator}}"
+        // or resolve isDesignMode in code switch there
         public IMainViewModel DesignTimeViewModel { get; set; } = new MockMainViewModel();
 
         public ViewModelLocator()
