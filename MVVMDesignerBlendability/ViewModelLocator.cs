@@ -8,16 +8,11 @@ namespace MVVMDesignerBlendability
 {
     public class ViewModelLocator
     {
-        public MainViewModel MainViewModel;
+        public MainViewModel MainViewModel { get; set; }
 
         public ViewModelLocator()
         {
             MainViewModel = new MainViewModel();
-        }
-
-        public static ViewModelLocator Instance()
-        {
-            return new ViewModelLocator();
         }
     }
 }

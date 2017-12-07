@@ -14,7 +14,7 @@ namespace MVVMDesignerBlendability
         public string TestString
         {
             get => _testTring;
-            private set => SetField(ref _testTring, value, nameof(TestString));
+            set => SetField(ref _testTring, value, nameof(TestString));
         }
         
     }

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MVVMDesignerBlendability"
              StartupUri="MainWindow.xaml">
-    <!--<Application.Resources>
-        <local:ViewModelLocator x:Key="ApplicationViewModelLocator"></local:ViewModelLocator>
-    </Application.Resources>-->
+    <Application.Resources>
+        <local:ViewModelLocator x:Key="Locator"></local:ViewModelLocator>
+    </Application.Resources>
 </Application>
