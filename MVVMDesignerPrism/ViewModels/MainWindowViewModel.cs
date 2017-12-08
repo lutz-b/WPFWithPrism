@@ -4,6 +4,7 @@ using System.ComponentModel;
 
 namespace MVVMDesignerPrism.ViewModels
 {
+    
     public class MainWindowViewModel : BindableBase
     {
         private string _title = "Prism Application Title";

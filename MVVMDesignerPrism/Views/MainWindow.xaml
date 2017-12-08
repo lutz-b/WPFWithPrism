@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMDesignerPrism"
+        xmlns:local2="clr-namespace:MVVMDesignerPrism.ViewModels"
         mc:Ignorable="d"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
+        d:DataContext="{d:DesignInstance local2:MainWindowViewModel}"
         Title="{Binding Title}" Height="350" Width="525">
     <StackPanel Orientation="Vertical">
         <Button Content="{Binding Subtitle}" Height="60" Command="{Binding ReplaceSubtitleCommand}"></Button>
